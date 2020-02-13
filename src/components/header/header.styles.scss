@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+
+
   
     .logo-container {
       height: 100%;
@@ -18,10 +20,35 @@
       align-items: center;
       justify-content: flex-end;
 
+      
   
       .option {
         padding: 10px 15px;
         cursor: pointer;
+        position: relative;
+        display: inline-block;
+        
+        
+      }
+
+      .option::before {
+        content:'';
+        position:absolute;
+        width:100%;
+        transform: scaleX(0);
+        height:2px;
+        bottom: 0;
+        left: 0;
+        background-color:black;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+
+        //border-bottom:1px solid black;
+      }
+
+      .option:hover::before{
+        transform: scaleX(1);
+        transform-origin: bottom left;
       }
     }
   }
